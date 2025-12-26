@@ -8,12 +8,16 @@
     </a>
   </div> -->
   <!-- <HelloWorld msg="Vite + Vue" /> -->
-   <don-hang />
+  <!-- <don-hang /> -->
+  <!-- <order-list /> -->
+  <product />
 </template>
 
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import DonHang from './views/don-hang/index.vue'
+import DonHang from './views/orders/order/index.vue'
+import OrderList from './views/orders/order-list/index.vue'
+import Product from './views/products/product/index.vue';
 </script>
 
 <style scoped>
