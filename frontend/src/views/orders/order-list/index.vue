@@ -1,6 +1,6 @@
 <template>
     <a-table :dataSource="dataSource" :columns="columns" rowKey="ngayDat" defaultExpandAllRows
-        :row-class-name="(record: ProcductStock) => (record.children?.length > 0 ? 'table-striped' : null)">
+        :row-class-name="(record: ProductStock) => (record.children?.length > 0 ? 'table-striped' : null)">
         <template #summary>
             <a-table-summary-row>
                 <a-table-summary-cell>Total</a-table-summary-cell>
@@ -12,11 +12,11 @@
     </a-table>
 </template>
 <script setup lang="ts">
-import { ProcductStock } from '@/api/product/model';
+import { ProductStock } from '@/api/product/model';
 import { columns } from './const';
 
 
-const dataSource: ProcductStock[] = [
+const dataSource: ProductStock[] = [
     {
         ngayDat: "2025-09-25",
         tonDauNgay: 0,

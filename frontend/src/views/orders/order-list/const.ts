@@ -1,8 +1,8 @@
 import { ColumnsType } from "ant-design-vue/es/table";
 
-import { ProcductStock } from "@/api/product/model";
+import { ProductStock } from "@/api/product/model";
 
-export const columns: ColumnsType<ProcductStock> = [
+export const columns: ColumnsType<ProductStock> = [
   {
     title: "Ngày đặt",
     dataIndex: "ngayDat",

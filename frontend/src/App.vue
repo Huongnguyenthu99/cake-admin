@@ -10,14 +10,14 @@
   <!-- <HelloWorld msg="Vite + Vue" /> -->
   <!-- <don-hang /> -->
   <!-- <order-list /> -->
-  <product />
+  <production-list />
 </template>
 
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
 import DonHang from './views/orders/order/index.vue'
 import OrderList from './views/orders/order-list/index.vue'
-import Product from './views/products/product/index.vue';
+import ProductionList from './views/production/production-list/index.vue'
 </script>
 
 <style scoped>

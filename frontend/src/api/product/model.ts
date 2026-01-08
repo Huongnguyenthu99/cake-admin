@@ -1,13 +1,22 @@
-export interface Product {
+export interface ProductionBatch {
     ngayGoi: string;
     id: string;
     gioNau: string;
     gioVotBanh: string;
     ghiChu?: string;
-    productItems: ProductItem[];
+    trangThai?: string;
+    producedItems: ProductItem[];
 }
-
-export interface ProcductStock {
+export interface ProductItem {
+    id: string;
+    productId: string;  
+    productName: string;
+    soLuong: number;
+    donGia: number;
+    ghiChu?: string;
+    uuid?: string;
+}
+export interface ProductStock {
     ngayDat: string;
     tonDauNgay: number;
     loaiBanh: string;
@@ -16,5 +25,5 @@ export interface ProcductStock {
     slCanGiao: number;
     slDaLam: number;
     tonKho: number;
-    children: ProcductStock[];
+    children: ProductStock[];
 }
