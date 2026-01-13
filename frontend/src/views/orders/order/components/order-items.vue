@@ -34,15 +34,19 @@ const emits = defineEmits(['update:dataSource']);
 const columns = [
     {
         title: 'Loại bánh',
-        dataIndex: 'type',
+        dataIndex: 'loai',
     },
     {
         title: 'Giá tiền',
-        dataIndex: 'price',
+        dataIndex: 'giaTien',
     },
     {
         title: 'Số lượng',
-        dataIndex: 'amount',
+        dataIndex: 'soLuong',
+    },
+    {
+        title: 'Ghi chú',
+        dataIndex: 'ghiChu',
     },
     {
         title: '',

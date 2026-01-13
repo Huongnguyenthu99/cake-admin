@@ -1,23 +1,44 @@
 <template>
-  <!-- <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div> -->
-  <!-- <HelloWorld msg="Vite + Vue" /> -->
-  <!-- <don-hang /> -->
-  <!-- <order-list /> -->
-  <production-list />
+  <div>
+    <a-menu :items="menus" mode="horizontal" @click="handleMenuClick">
+      <a-menu-item key="path"></a-menu-item>
+    </a-menu>
+    <div>
+      <RouterView></RouterView>
+    </div>
+  </div>
 </template>
 
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import DonHang from './views/orders/order/index.vue'
-import OrderList from './views/orders/order-list/index.vue'
-import ProductionList from './views/production/production-list/index.vue'
+import { useRouter } from 'vue-router';
+
+
+const router = useRouter();
+
+const menus = [
+  {
+    key: 'order',
+    path: 'order',
+    label: 'Đơn hàng',
+    title: 'Đơn hàng',
+  },
+  {
+    key: 'orderDetail',
+    path: 'order-detail',
+    label: 'Danh sách đơn hàng',
+    title: 'Danh sách đơn hàng',
+  },
+  {
+    key: 'production',
+    path: 'production',
+    label: 'Mẻ bánh',
+    title: 'Mẻ bánh',
+  },
+]
+
+const handleMenuClick = ({ item }: {item: {path: string}}) => {
+  router.push(item.path);
+}
 </script>
 
 <style scoped>
