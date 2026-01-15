@@ -13,8 +13,8 @@ export interface Order {
 export interface OrderItem {
     uuid?: string;
     orderId?: string;
-    productId?: string;
+    productTypeId?: number;
     soLuong: number;
-    donGia?: string;
+    donGia?: number;
     ghiChu?: string;
 }

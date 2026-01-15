@@ -10,7 +10,9 @@
 </template>
 
 <script setup lang="ts">
+import { onMounted } from 'vue';
 import { useRouter } from 'vue-router';
+import { useLoaiBanhStore } from './store/modules/loaiBanh';
 
 
 const router = useRouter();
@@ -39,6 +41,15 @@ const menus = [
 const handleMenuClick = ({ item }: {item: {path: string}}) => {
   router.push(item.path);
 }
+
+const initDanhMuc = async () => {
+  console.log("45455")
+  await useLoaiBanhStore().fetch();
+}
+
+onMounted(() => {
+  initDanhMuc();
+})
 </script>
 
 <style scoped>

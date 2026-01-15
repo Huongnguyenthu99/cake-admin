@@ -1,7 +1,7 @@
 import axios from "axios";
-
+console.log("VITE_API_URL", import.meta.env.VITE_API_URL);
 const http = axios.create({
-  baseURL: "http://localhost:3000/api",
+  baseURL: import.meta.env.VITE_API_URL,
   timeout: 10000,
   headers: {
     "Content-Type": "application/json"
@@ -9,7 +9,7 @@ const http = axios.create({
 });
 
 http.interceptors.response.use(
-  response => response,
+  response => response.data,
   error => {
     console.error("API error:", error.response?.data || error.message);
     return Promise.reject(error);
