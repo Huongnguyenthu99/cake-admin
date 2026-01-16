@@ -1,69 +1,15 @@
 <template>
-    <a-table :dataSource="dataSource" :columns="columns" rowKey="ngayDat" defaultExpandAllRows
-        :row-class-name="(record: ProductStock) => (record.children?.length > 0 ? 'table-striped' : null)">
-        <template #summary>
-            <a-table-summary-row>
-                <a-table-summary-cell>Total</a-table-summary-cell>
-                <a-table-summary-cell colspan="6">
-                    <a-typography-text type="danger"></a-typography-text>
-                </a-table-summary-cell>
-            </a-table-summary-row>
-        </template>
-    </a-table>
+    <div class="flex">
+        <danh-sach class="w-3/4" @detail="(id) => orderId = id"/>
+        <order-detail :id="orderId"/>
+    </div>
 </template>
 <script setup lang="ts">
-import { ProductStock } from '@/api/product/model';
-import { columns } from './const';
+import { ref } from 'vue';
+import DanhSach from './components/danh-sach.vue'
+import orderDetail from './components/order-detail.vue';
 
-
-const dataSource: ProductStock[] = [
-    {
-        ngayDat: "2025-09-25",
-        tonDauNgay: 0,
-        loaiBanh: "",
-        slDat: 0,
-        slDaGiao: 0,
-        slCanGiao: 0,
-        slDaLam: 0,
-        tonKho: 0,
-        children: [
-            {
-                ngayDat: "2025-09-25",
-                tonDauNgay: 0,
-                loaiBanh: "50K",
-                slDat: 100,
-                slDaGiao: 50,
-                slCanGiao: 50,
-                slDaLam: 50,
-                tonKho: 0,
-                children: []
-            }
-        ]
-    },
-    {
-        ngayDat: "2025-09-26",
-        tonDauNgay: 0,
-        loaiBanh: "",
-        slDat: 0,
-        slDaGiao: 0,
-        slCanGiao: 0,
-        slDaLam: 0,
-        tonKho: 0,
-        children: [
-            {
-                ngayDat: "2025-09-26",
-                tonDauNgay: 0,
-                loaiBanh: "50K",
-                slDat: 100,
-                slDaGiao: 0,
-                slCanGiao: 100,
-                slDaLam: 0,
-                tonKho: 0,
-                children: []
-            }
-        ]
-    }
-];
+const orderId = ref();
 
 </script>
 

@@ -1,54 +1,46 @@
+import { Order } from "@/api/order/model";
 import { ColumnsType } from "ant-design-vue/es/table";
 
-import { ProductStock } from "@/api/product/model";
-
-export const columns: ColumnsType<ProductStock> = [
+export const columns: ColumnsType<Order> = [
   {
-    title: "Ngày đặt",
-    dataIndex: "ngayDat",
-    key: "ngayDat",
-    customRender: ({ record }) => {
-      if (record.children?.length) {
-        return {
-          children: `Ngày ${record.ngayDat}`,
-        };
-      }
-      return null;
-    },
+    title: "Ngày lấy hàng",
+    dataIndex: "ngayLay",
+    key: "ngayLay",
   },
   {
-    title: "Loại bánh",
-    dataIndex: "loaiBanh",
-    key: "loaiBanh",
+    title: "Họ tên",
+    dataIndex: "ten",
+    key: "ten",
   },
   {
-    title: "SL đặt",
-    dataIndex: "slDat",
-    key: "slDat",
+    title: "SĐT",
+    dataIndex: "sdt",
+    key: "sdt",
+  },
+  {
+    title: "Địa chỉ",
+    dataIndex: "diaChi",
+    key: "diaChi",
+  },
+  {
+    title: "Ghi chú",
+    dataIndex: "ghiChu",
+    key: "ghiChu",
+  },
+  {
+    title: "Trạng thái",
+    dataIndex: "trangThai",
+    key: "trangThai",
+  },
+  {
+    title: "Số lượng",
+    dataIndex: "tongSoLuong",
+    key: "soLuong",
     align: "right",
   },
   {
-    title: "SL đã giao",
-    dataIndex: "slDaGiao",
-    key: "slDaGiao",
-    align: "right",
-  },
-  {
-    title: "SL cần giao",
-    dataIndex: "slCanGiao",
-    key: "slCanGiao",
-    align: "right",
-  },
-  {
-    title: "SL đã làm",
-    dataIndex: "slDaLam",
-    key: "slDaLam",
-    align: "right",
-  },
-  {
-    title: "Tồn kho",
-    dataIndex: "tonKho",
-    key: "tonKho",
-    align: "right",
+    title: "Thao tác",
+    dataIndex: "action",
+    key: "action",
   },
 ];
