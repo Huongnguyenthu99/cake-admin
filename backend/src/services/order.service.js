@@ -58,23 +58,23 @@ export const getListOrderService = async (query) => {
 };
 
 export const getOrderByIdService = async (query) => {
-  const qb = knexInstance({ o: "Order" }).select({
-    id: "o.id",
-    ten: "o.ten",
-    sdt: "o.sdt",
-    trangThai: "o.trang_thai",
-    diaChi: "o.dia_chi",
-    ghiChu: "o.ghi_chu",
-    ngayLay: "o.ngay_lay",
-  });
+  // const qb = knexInstance({ o: "Order" }).select({
+  //   id: "o.id",
+  //   ten: "o.ten",
+  //   sdt: "o.sdt",
+  //   trangThai: "o.trang_thai",
+  //   diaChi: "o.dia_chi",
+  //   ghiChu: "o.ghi_chu",
+  //   ngayLay: "o.ngay_lay",
+  // });
 
-  const orderDetails = knexInstance({ od: "OrderDetail" })
-    .leftJoin({ pt: "ProductType" }, "od.product_type_id", "pt.id")
-    .select({
-      id: "od.id",
-      soLuong: "od.so_luong",
-      ghiChu: "od.ghi_chu",
-      productTypeId: "product_type_id",
-      loai: ""
-    });
+  // const orderDetails = knexInstance({ od: "OrderDetail" })
+  //   .leftJoin({ pt: "ProductType" }, "od.product_type_id", "pt.id")
+  //   .select({
+  //     id: "od.id",
+  //     soLuong: "od.so_luong",
+  //     ghiChu: "od.ghi_chu",
+  //     productTypeId: "product_type_id",
+  //     loai: ""
+  //   });
 };
