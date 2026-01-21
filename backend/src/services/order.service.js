@@ -74,7 +74,7 @@ export const getOrderByIdService = async (query) => {
       id: "od.id",
       soLuong: "od.so_luong",
       ghiChu: "od.ghi_chu",
-      productTypeId: 
+      productTypeId: "product_type_id",
       loai: ""
     });
 };
