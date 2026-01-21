@@ -3,7 +3,7 @@ import knexInstance from "../db.js";
 export const createOrderService = async (query) => {
   const { ten, sdt, diaChi, ngayLay, ghiChu, orderItems } = query;
 
-  return knexInstance.transaction(async (trx) => {
+  return await knexInstance.transaction(async (trx) => {
     // 1. Insert Order
     const [order] = await trx("Order")
       .insert({
