@@ -58,6 +58,7 @@ export const getListOrderService = async (query) => {
 };
 
 export const getOrderByIdService = async (query) => {
+  return {};
   // const qb = knexInstance({ o: "Order" }).select({
   //   id: "o.id",
   //   ten: "o.ten",
