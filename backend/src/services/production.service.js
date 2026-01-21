@@ -3,7 +3,7 @@ import knexInstance from "../db.js";
 export const getProductionsService = async (query) => {
   const { status, categoryId, page = 1, limit = 10 } = query;
 
-  const qb = knexInstance("Production")
+  const qb = await knexInstance("Production")
     .select({
       id: "id",
       createdAt: "created_at",
@@ -19,7 +19,7 @@ export const getProductionsService = async (query) => {
 };
 
 export const getLoaiBanh = async () => {
-  return knexInstance("ProductType")
+  return await knexInstance("ProductType")
     .select({
       id: "id",
       loai: "loai",

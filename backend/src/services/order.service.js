@@ -33,7 +33,7 @@ export const createOrderService = async (query) => {
 };
 
 export const getListOrderService = async (query) => {
-  const qb = knexInstance({ o: "Order" })
+  const qb = await knexInstance({ o: "Order" })
     .leftJoin({ od: "OrderDetail" }, "o.id", "od.order_id")
     .select({
       id: "o.id",
@@ -58,16 +58,15 @@ export const getListOrderService = async (query) => {
 };
 
 export const getOrderByIdService = async (query) => {
-  return {};
-  // const qb = knexInstance({ o: "Order" }).select({
-  //   id: "o.id",
-  //   ten: "o.ten",
-  //   sdt: "o.sdt",
-  //   trangThai: "o.trang_thai",
-  //   diaChi: "o.dia_chi",
-  //   ghiChu: "o.ghi_chu",
-  //   ngayLay: "o.ngay_lay",
-  // });
+  return await knexInstance({ o: "Order" }).select({
+    id: "o.id",
+    ten: "o.ten",
+    sdt: "o.sdt",
+    trangThai: "o.trang_thai",
+    diaChi: "o.dia_chi",
+    ghiChu: "o.ghi_chu",
+    ngayLay: "o.ngay_lay",
+  });
 
   // const orderDetails = knexInstance({ od: "OrderDetail" })
   //   .leftJoin({ pt: "ProductType" }, "od.product_type_id", "pt.id")
