@@ -7,6 +7,10 @@ const knexInstance = knex({
     ssl: {
       rejectUnauthorized: false,
     },
+    pool: {
+      min: 2,
+      max: 30,
+    },
   },
 });
 

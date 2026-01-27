@@ -1,7 +1,7 @@
 import knexInstance from "../db.js";
 
 export const getProductionsService = async (query) => {
-  const { status, categoryId, page = 1, limit = 10 } = query;
+  const { status, categoryId } = query;
 
   const qb = await knexInstance("Production")
     .select({
@@ -11,9 +11,7 @@ export const getProductionsService = async (query) => {
     .modify((q) => {
       if (status) q.where("status", status);
       if (categoryId) q.where("category_id", categoryId);
-    })
-    .limit(limit)
-    .offset((page - 1) * limit);
+    });
 
   return qb;
 };

@@ -52,21 +52,23 @@ export const getListOrderService = async (query) => {
       "o.trang_thai",
       "o.dia_chi",
       "o.ghi_chu",
-      "o.ngay_lay"
+      "o.ngay_lay",
     );
   return qb;
 };
 
 export const getOrderByIdService = async (query) => {
-  return await knexInstance({ o: "Order" }).select({
-    id: "o.id",
-    ten: "o.ten",
-    sdt: "o.sdt",
-    trangThai: "o.trang_thai",
-    diaChi: "o.dia_chi",
-    ghiChu: "o.ghi_chu",
-    ngayLay: "o.ngay_lay",
-  });
+  return await knexInstance({ o: "Order" })
+    .select({
+      id: "o.id",
+      ten: "o.ten",
+      sdt: "o.sdt",
+      trangThai: "o.trang_thai",
+      diaChi: "o.dia_chi",
+      ghiChu: "o.ghi_chu",
+      ngayLay: "o.ngay_lay",
+    })
+    .where("o.id", query.id);
 
   // const orderDetails = knexInstance({ od: "OrderDetail" })
   //   .leftJoin({ pt: "ProductType" }, "od.product_type_id", "pt.id")
